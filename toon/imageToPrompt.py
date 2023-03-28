@@ -4,9 +4,12 @@ import heapq
 
 def image_to_prompt(img):
     '''
+    Convert the image to a prompt.
+    
     img: image path
 
-    Output: Generates a prompt from the given image using the DeepFace API as given below format.
+    Output: 
+        Generates a prompt from the given image using the DeepFace API as given below format.
 
         face_analysis = [{'emotion': {'angry': 6.721813231706619,
         'disgust': 0.0009493059224041644,

@@ -3,10 +3,13 @@ import heapq
 
 
 def image_to_detail(img):
-    ''' Convert the image to a dictionary of details.
+    ''' 
+    Convert the image to a dictionary of details.
+    
     img: image path
 
-    Output: Generate a dictionary of details from the given image using the DeepFace API as given below format.
+    Output: 
+        Generate a dictionary of details from the given image using the DeepFace API as given below format.
 
         face_analysis = [{'emotion': {'angry': 6.721813231706619,
         'disgust': 0.0009493059224041644,
