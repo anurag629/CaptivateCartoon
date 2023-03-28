@@ -35,7 +35,7 @@ def image_to_detail(img):
         largest_emotion = heapq.nlargest(1, emotion, key=emotion.get)[-1]
         second_largest_emotion = heapq.nlargest(2, emotion, key=emotion.get)[-1]
         age = face_analysis[0]['age']
-        dominant_gender = face_analysis[0]['gender']
+        dominant_gender = face_analysis[0]['dominant_gender']
 
         detail = {
             largest_emotion: largest_emotion,
@@ -52,13 +52,13 @@ def image_to_detail(img):
     largest_emotion = heapq.nlargest(1, emotion, key=emotion.get)[-1]
     second_largest_emotion = heapq.nlargest(2, emotion, key=emotion.get)[-1]
     age = face_analysis[0]['age']
-    dominant_gender = face_analysis[0]['gender']
+    dominant_gender = face_analysis[0]['dominant_gender']
 
     detail = {
-        largest_emotion: largest_emotion,
-        second_largest_emotion: second_largest_emotion,
-        age: age,
-        dominant_gender: dominant_gender,
+        'largest_emotion': largest_emotion,
+        'second_largest_emotion': second_largest_emotion,
+        'age': age,
+        'dominant_gender': dominant_gender,
     }
 
     return detail

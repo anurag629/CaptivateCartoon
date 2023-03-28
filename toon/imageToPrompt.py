@@ -54,13 +54,10 @@ def image_to_prompt(img):
     second_largest_emotion = heapq.nlargest(2, emotion, key=emotion.get)[-1]
     dominant_emotion = face_analysis[0]['dominant_emotion']
     age = face_analysis[0]['age']
-    dominant_gender = face_analysis[0]['gender']
+    dominant_gender = face_analysis[0]['dominant_gender']
     dominant_race = face_analysis[0]['dominant_race']
 
     prompt = f'''Generate a tagline and description for the person's face based on the following information:
-        The person appears to be {dominant_race} {dominant_gender}. The person appears to be in a state of 
-        {largest_emotion} and {second_largest_emotion}, with a dominant emotion of {dominant_emotion}. 
-        The person appears to be around {age} years old. Use this information to come up with a catchy and 
-        memorable tagline/caption/description that accurately represents the person in the photo.'''
+        The person appears to be {dominant_race} {dominant_gender}. The person appears to be in a state of {largest_emotion} and {second_largest_emotion}, with a dominant emotion of {dominant_emotion}. The person appears to be around {age} years old. Use this information to come up with a catchy and memorable tagline/caption/description that accurately represents the person in the photo.'''
 
     return prompt
