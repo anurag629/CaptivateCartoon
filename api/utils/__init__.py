@@ -1,0 +1,1 @@
+from .deleteFile import delete_image

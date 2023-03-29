@@ -1,1 +1,1 @@
-from .details import image_to_details
+from .imageToDetails import image_to_details

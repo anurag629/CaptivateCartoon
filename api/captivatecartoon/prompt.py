@@ -49,7 +49,7 @@ def prompt(img):
 
     '''
 
-    face_analysis = image_to_details(img_path=img)
+    face_analysis = image_to_details(img)
 
     emotion = face_analysis[0]['emotion']
 

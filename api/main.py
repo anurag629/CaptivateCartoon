@@ -31,6 +31,11 @@ async def imagetodetail(file: UploadFile = File(...)):
 
     # Call any function with the saved file path
     result = detail(file_location)
+    prompts = prompt(file_location)
 
+    # Delete the file
+    os.remove(file_location)
+    
     # Return the result
-    return {"result": result}
+    return {"result": result,
+            "prompts": prompts}
