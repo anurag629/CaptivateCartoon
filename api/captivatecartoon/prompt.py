@@ -1,8 +1,8 @@
-from deepface import DeepFace
 import heapq
 
+from details import image_to_details
 
-def image_to_prompt(img):
+def prompt(img):
     '''
     Convert the image to a prompt.
     
@@ -49,7 +49,7 @@ def image_to_prompt(img):
 
     '''
 
-    face_analysis = DeepFace.analyze(img_path=img)
+    face_analysis = image_to_details(img_path=img)
 
     emotion = face_analysis[0]['emotion']
 

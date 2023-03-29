@@ -1,0 +1,1 @@
+from .details import image_to_details

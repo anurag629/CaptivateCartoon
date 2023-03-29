@@ -1,8 +1,8 @@
-from deepface import DeepFace
 import heapq
 
+from details import details
 
-def image_to_detail(img):
+def detail(img):
     ''' 
     Convert the image to a dictionary of details.
     
@@ -48,7 +48,7 @@ def image_to_detail(img):
         }
     '''
 
-    face_analysis = DeepFace.analyze(img_path=img)
+    face_analysis = details.image_to_details(img_path=img)
 
     emotion = face_analysis[0]['emotion']
 
