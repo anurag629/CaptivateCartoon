@@ -3,6 +3,8 @@ from fastapi.responses import FileResponse
 
 from captivatecartoon import detail
 from captivatecartoon import prompt
+from captivatecartoon import story
+from captivatecartoon import caption
 
 import os
 import shutil
@@ -32,10 +34,16 @@ async def imagetodetail(file: UploadFile = File(...)):
     # Call any function with the saved file path
     result = detail(file_location)
     prompts = prompt(file_location)
+    
+    # Gettting the caption and story
+    cap = caption(prompts['caption'])
+    stor = story(prompts['story'])
 
     # Delete the file
     os.remove(file_location)
-    
+
     # Return the result
     return {"result": result,
-            "prompts": prompts}
+            "caption": cap,
+            "story": stor,
+            }
