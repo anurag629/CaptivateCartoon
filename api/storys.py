@@ -13,5 +13,3 @@ def story(prompt):
         return bot_response
     else:
         return 'Error in generating story.'
-
-           

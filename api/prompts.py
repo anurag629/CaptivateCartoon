@@ -1,6 +1,6 @@
 import heapq
 
-import details
+from .imageToDetails import image_to_details
 
 
 def prompt(img):
@@ -50,7 +50,7 @@ def prompt(img):
 
     '''
 
-    face_analysis = details.image_to_details(img)
+    face_analysis = image_to_details(img)
 
     emotion = face_analysis[0]['emotion']
 

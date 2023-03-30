@@ -1,9 +1,10 @@
 from deepface import DeepFace
 
+
 def image_to_details(img):
     ''' 
     Convert the image to a dictionary of details.
-    
+
     img: image path
 
     Output: 

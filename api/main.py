@@ -1,6 +1,12 @@
 import shutil
 import os
-import captivatecartoon as cc
+
+# from .details import detail
+from .prompts import prompt
+from .storys import story
+from .captions import caption
+from .details import detail
+
 
 from fastapi import FastAPI, File, UploadFile
 
@@ -30,12 +36,12 @@ async def imagetodetail(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     # Call any function with the saved file path
-    result = cc.detail(file_location)
-    prompts = cc.prompt(file_location)
+    result = detail(file_location)
+    prompts = prompt(file_location)
 
     # Gettting the caption and story
-    cap = cc.caption(prompts['caption'])
-    stor = cc.story(prompts['story'])
+    cap = caption(prompts['caption'])
+    stor = story(prompts['story'])
 
     # Delete the file
     os.remove(file_location)

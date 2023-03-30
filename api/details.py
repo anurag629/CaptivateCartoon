@@ -1,6 +1,6 @@
 import heapq
 
-import details
+from .imageToDetails import image_to_details
 
 
 def detail(img):
@@ -49,7 +49,7 @@ def detail(img):
         }
     '''
 
-    face_analysis = details.image_to_details(img)
+    face_analysis = image_to_details(img)
 
     emotion = face_analysis[0]['emotion']
 
