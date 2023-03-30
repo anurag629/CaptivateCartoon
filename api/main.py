@@ -1,13 +1,11 @@
-from fastapi import FastAPI, File, UploadFile
-from fastapi.responses import FileResponse
-
-from captivatecartoon import detail
-from captivatecartoon import prompt
-from captivatecartoon import story
-from captivatecartoon import caption
-
-import os
 import shutil
+import os
+import captivatecartoon as cc
+
+from fastapi import FastAPI, File, UploadFile
+
+print("Hello from api/main.py")
+
 
 app = FastAPI()
 
@@ -32,12 +30,12 @@ async def imagetodetail(file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     # Call any function with the saved file path
-    result = detail(file_location)
-    prompts = prompt(file_location)
-    
+    result = cc.detail(file_location)
+    prompts = cc.prompt(file_location)
+
     # Gettting the caption and story
-    cap = caption(prompts['caption'])
-    stor = story(prompts['story'])
+    cap = cc.caption(prompts['caption'])
+    stor = cc.story(prompts['story'])
 
     # Delete the file
     os.remove(file_location)

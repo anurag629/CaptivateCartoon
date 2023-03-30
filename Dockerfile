@@ -1,11 +1,6 @@
-FROM python:3.9
- 
-WORKDIR /CaptivateCartoon
- 
-COPY ./requirements.txt /api/requirements.txt
- 
-RUN pip install --no-cache-dir --upgrade -r /api/requirements.txt
- 
-COPY ./api /CaptivateCartoon/api
-
-CMD ["uvicorn", "api.main:api", "--host", "0.0.0.0", "--port", "80"]
+FROM public.ecr.aws/lambda/python:3.8
+COPY ./api ./api
+COPY ./requirements.txt ./requirements.txt
+RUN pip install -r ./requirements.txt
+ENV PYTHONPATH "${PYTHONPATH}:/api"
+CMD ["api.main.handler"]

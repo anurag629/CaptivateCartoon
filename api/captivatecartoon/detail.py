@@ -1,11 +1,12 @@
 import heapq
 
-from details import image_to_details
+import details
+
 
 def detail(img):
     ''' 
     Convert the image to a dictionary of details.
-    
+
     img: image path
 
     Output: 
@@ -48,7 +49,7 @@ def detail(img):
         }
     '''
 
-    face_analysis = image_to_details(img)
+    face_analysis = details.image_to_details(img)
 
     emotion = face_analysis[0]['emotion']
 

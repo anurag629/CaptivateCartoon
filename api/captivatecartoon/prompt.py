@@ -1,11 +1,12 @@
 import heapq
 
-from details import image_to_details
+import details
+
 
 def prompt(img):
     '''
     Convert the image to a prompt.
-    
+
     img: image path
 
     Output: 
@@ -49,7 +50,7 @@ def prompt(img):
 
     '''
 
-    face_analysis = image_to_details(img)
+    face_analysis = details.image_to_details(img)
 
     emotion = face_analysis[0]['emotion']
 
