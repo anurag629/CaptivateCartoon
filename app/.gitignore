@@ -1,21 +1,4 @@
-.vercel
-*.log
-*.pyc
-__pycache__
-db.sqlite3
-media
-
-# Environments 
-.env 
-.venv 
-env/ 
-venv/ 
-ENV/ 
-env.bak/ 
-venv.bak/ 
-
-
-# React .gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
 /node_modules

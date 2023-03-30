@@ -3,6 +3,7 @@ import os
 import captivatecartoon as cc
 
 from fastapi import FastAPI, File, UploadFile
+# from fastapi import JSONResponse
 
 print("Hello from api/main.py")
 
@@ -20,28 +21,31 @@ def read_root():
 
 # API endpoint `imagetodetail` which will accept image and then call the `image_to_detail(img)` function which return detail from the `imageToDetail.py`.
 @app.post("/imagetodetail/")
-async def imagetodetail(file: UploadFile = File(...)):
+async def imagetodetail(file: UploadFile):
     '''
     This API endpoint will accept image and then call the `image_to_detail(img)` function which return detail from the `imageToDetail.py`.
     '''
-    # Save the uploaded file to a directory
-    file_location = f"uploads/{file.filename}"
-    with open(file_location, "wb") as buffer:
-        shutil.copyfileobj(file.file, buffer)
+    try:
+            # Save the uploaded file to a directory
+        file_location = f"uploads/{file.filename}"
+        with open(file_location, "wb") as buffer:
+            shutil.copyfileobj(file.file, buffer)
 
-    # Call any function with the saved file path
-    result = cc.detail(file_location)
-    prompts = cc.prompt(file_location)
+        # Call any function with the saved file path
+        result = cc.detail(file_location)
+        prompts = cc.prompt(file_location)
 
-    # Gettting the caption and story
-    cap = cc.caption(prompts['caption'])
-    stor = cc.story(prompts['story'])
+        # Gettting the caption and story
+        cap = cc.caption(prompts['caption'])
+        stor = cc.story(prompts['story'])
 
-    # Delete the file
-    os.remove(file_location)
+        # Delete the file
+        os.remove(file_location)
 
-    # Return the result
-    return {"result": result,
-            "caption": cap,
-            "story": stor,
-            }
+        # Return the result
+        return {"result": result,
+                "caption": cap,
+                "story": stor,
+                }
+    except Exception as e:
+        return JSONResponse(status_code=400, content={"message": str(e)})
