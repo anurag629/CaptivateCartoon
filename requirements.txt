@@ -1,6 +1,6 @@
-Django==4.1.3
+# These are for API 
 openai==0.27.2
-deepface
+deepface==0.0.79
 fastapi==0.95.0
 uvicorn==0.21.1
 python-multipart==0.0.6
