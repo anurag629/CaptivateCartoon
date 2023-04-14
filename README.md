@@ -2,12 +2,14 @@
 
 # Image Detail Extractor and Caption, Story Generator
 
-This is a simple web application that allows you to extract details from images using the DeepFace API and then pass that details with a prompt to get the caption and story based on the face image using ChatGPT API. The project is built using FastAPI as the backend framework and React as the frontend framework.
+This is a simple web application that allows you to upload an image and get details about the image, caption and story for the image.
 
 ## Requirements
 
 - Python 3.6 or higher
-- Node.js 14.x or higher
+- React 16.8 or higher
+- FastAPI
+- Tensorflow
 
 ## Installation
 
