@@ -1,9 +1,12 @@
 import shutil
 import os
+import uvicorn
+
+# Project imports
 import captivatecartoon as cc
 
+# FastAPI imports
 from fastapi import FastAPI, File, UploadFile
-# from fastapi import JSONResponse
 
 print("Hello from api/main.py")
 
@@ -12,7 +15,7 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_root():
+async def root():
     '''
     This is the root of the API.
     '''
@@ -49,3 +52,9 @@ async def imagetodetail(file: UploadFile):
                 }
     except Exception as e:
         return JSONResponse(status_code=400, content={"message": str(e)})
+
+
+
+# at last, the bottom of the file/module
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=5044)
