@@ -7,6 +7,7 @@ import captivatecartoon as cc
 
 # FastAPI imports
 from fastapi import FastAPI, File, UploadFile
+from fastapi.responses import JSONResponse
 
 print("Hello from api/main.py")
 

@@ -64,7 +64,7 @@ def prompt(img):
     prompt_caption = f'''Generate a caption for the person's face based on the following information:
         The person appears to be {dominant_race} {dominant_gender}. The person appears to be in a state of {largest_emotion} and {second_largest_emotion}, with a dominant emotion of {dominant_emotion}. The person appears to be around {age} years old. Use this information to come up with a catchy and memorable caption that accurately represents the person in the photo. Make sure do not use any name of any person or place in the caption.'''
 
-    prompt_story = f'''Generate a story for the person's face based on the following information:
+    prompt_story = f'''Generate a long story for the person's face based on the following information:
         The person appears to be {dominant_race} {dominant_gender}. The person appears to be in a state of {largest_emotion} and {second_largest_emotion}, with a dominant emotion of {dominant_emotion}. The person appears to be around {age} years old. Use this information to come up with a catchy and memorable story that accurately represents the person in the photo. Make sure do not use any name of any person or place in the story.'''
 
     prompt = {
