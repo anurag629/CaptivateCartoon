@@ -1,0 +1,4 @@
+openai==0.27.2
+deepface==0.0.79
+django==4.2
+djangorestframework==3.14.0
