@@ -17,7 +17,7 @@ pipe.to(device)
 
 def text_to_image(text: str):
     with autocast(device):
-        image = pipe(text, guidance_scale=8.5).image[0]
+        image = pipe(text, guidance_scale=8.5).images[0]
 
     image.save(f"/uploads/{text[:8]}.jpg")
 
