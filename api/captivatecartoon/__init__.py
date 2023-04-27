@@ -6,3 +6,5 @@ from . import story
 from .story import *
 from . import caption
 from .caption import *
+from . import textToImage
+from .textToImage import *

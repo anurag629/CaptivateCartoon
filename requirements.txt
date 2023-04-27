@@ -4,3 +4,6 @@ deepface==0.0.79
 fastapi==0.95.0
 uvicorn==0.21.1
 python-multipart==0.0.6
+diffusers==0.16.0
+transformers==4.28.1
+accelerate==0.18.0
